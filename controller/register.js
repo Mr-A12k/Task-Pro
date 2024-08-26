@@ -12,7 +12,7 @@ const registerUser = async (req, res) => {
 
         let existingUser = await User.findOne({ email });
         if (existingUser) {
-           return res.status(400).json({ message: "User already exist!" });
+            return res.status(400).json({ message: "User already exist!" });
         }
         const newUser = new User({
             email, password: hashedPassword,
@@ -21,10 +21,10 @@ const registerUser = async (req, res) => {
 
         if (!role || role === 'student') {
             const newStudent = new Student({
-                username, 
-                mobile, 
-                college, 
-                department, 
+                username,
+                mobile,
+                college,
+                department,
                 userDetails: newUser._id,
             })
 
@@ -33,11 +33,11 @@ const registerUser = async (req, res) => {
         }
 
         await newUser.save();
-        res.status(201).json({message:"user registered successfully",user:newUser})
+        res.status(201).json({ message: "user registered successfully", user: newUser })
     } catch (error) {
-        console.error("Registration error:",error);
-        res.status(500).json({message:"server error"});
+        console.error("Registration error:", error);
+        res.status(500).json({ message: "server error" });
     }
 };
 
-module.exports = {registerUser};
+module.exports = { registerUser };
