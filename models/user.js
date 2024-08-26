@@ -1,8 +1,5 @@
 const mongoose = require('mongoose');
 const Student = require('./studentDetails');
-const CourseDetails = require('./courseDetails')
-const Course = require('./course');
-const Progress =require('./progress');
 const bcrypt=require('bcrypt');
 
 const userSchema = new mongoose.Schema({
@@ -15,20 +12,15 @@ const userSchema = new mongoose.Schema({
         type:String,
         required:true,
     },
+    role:{
+        type:String,
+        default:'student',
+    },
     student:{
         type:mongoose.Schema.Types.ObjectId,
-        ref:'studentDetails'
+        ref:'Student'
     },
-    course:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:'course'
-    },
-    coursedetails:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:'courseDetails'
-    },
-    
-
+   
 });
 
 

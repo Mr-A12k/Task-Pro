@@ -4,13 +4,15 @@ const progressSchema = new mongoose.Schema({
     progresses:[
         {
             progress:{
-                type:Boolean
+                type:Boolean,
+                req:true
             }
         }
     ],
     assignment:{
         type:mongoose.Schema.Types.ObjectId,
-        ref:'assignment'
+        ref:'assignment',
+        req:true
     }
 });
 

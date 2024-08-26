@@ -15,7 +15,11 @@ const assignmentSchema = new mongoose.Schema({
     coursedetails:{
         type:mongoose.Schema.Types.ObjectId,
         ref:'courseDetails'
-    }
+    },
+    completed:[{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'Student'
+    }]
 });
 
 

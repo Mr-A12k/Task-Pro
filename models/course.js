@@ -11,12 +11,16 @@ const courseSchema = new mongoose.Schema({
     },
     courseDetails:{
         type:mongoose.Schema.Types.ObjectId,
-        ref:'courseDetails'
+        ref:'CourseDetails'
     },
     user:{
         type:mongoose.Schema.Types.ObjectId,
         ref:'user'
-    }
+    },
+    completedStudents:[{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'Student'
+    }]
 
 });
 

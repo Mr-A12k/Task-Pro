@@ -7,12 +7,15 @@ const courseDetailsSchema = new mongoose.Schema({
         {
             topic: { type: String },
             //topic2: { type: String }
-
         }
     ],
     assignments: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'assignment'
+    },
+    course:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'Course'
     },
 
     user:{
