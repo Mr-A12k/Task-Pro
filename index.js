@@ -17,7 +17,7 @@ app.post('/student',(req,res)=>{
 })
 
 app.get('/studentDetails', (req,res)=>{
-    const doc
+    //const doc
 })
 
 
