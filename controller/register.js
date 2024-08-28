@@ -1,8 +1,7 @@
 const bcrypt = require('bcryptjs');
 const User = require('../models/user');
 const Student = require('../models/studentDetails');
-const { hashGenerator } = require('../counter/hashing');
-
+const hashGenerator  = require('../counter/hashing');
 
 const registerUser = async (req, res) => {
     const { username, email, password, role, mobile, college, department } = req.body;

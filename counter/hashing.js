@@ -12,5 +12,4 @@ const hashValidator = async (plainPassword,hashPassword)=>{
     return result;
 }
 
-
 module.exports= {hashGenerator,hashValidator};

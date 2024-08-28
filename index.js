@@ -13,7 +13,7 @@ const app = express();
 
 app.use(express.json());
 app.use('/api',registerRouter);
-// app.use('/api',loginRouter);
+app.use('/api',loginRouter);
 // app.use('/api/assignment',assignmentRouter);
 // app.use('/api/course',courseRouter);
 // app.use('/api/courseDetails',courseDetailsRouter);
